@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 2</title> 
+
+    <style>
+        #container{
+        
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            gap: 80px 80px;
+            width: 90%;
+            margin-top: 25px;
+            margin: auto;        
+
+
+        }
+        #container>div{
+
+            width: 100%;
+            height: 110%;
+            border-radius: 20px;
+            padding-bottom: px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+            }
+
+         img{
+             width: 100%;
+             height: 80%;
+             border-radius: 20px;
+             margin-bottom: 20px;
+
+         }
+
+         p{
+            margin-top: -7px;
+         }
+  
+
+      
+
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+</body>
+</html>
+
+<script>
+
+      var arr = [{name:"Jurassic World: Dominion",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Jurassic-World--Dominion-705x750-fb02f490-cd52-11ec-8d22-2363945d80ef.jpg",
+      imbd:"6.5"},
+      {name:"K.G.F. Chapter 2",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/KGF-705x750-76008750-b6fd-11ec-9639-8322852eadd4.jpg",
+      imbd:"9"},
+      {name:"Doctor Strange: In The Multiverse ",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Doctor-Strange--In-The-Multiverse-Of-Madness-r-705x750-4a867c30-b75a-11ec-9639-8322852eadd4.jpg",
+      imbd:"7.5"},
+      {name:"The Gun",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Top-Gun--Maverick-705x750-3fc02540-cc80-11ec-829c-4bf6477dd3c8.jpg",
+      imbd:"7.5"},
+      {name:"RRR",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/RRR-North-705x750-fd78d9c0-693d-11ec-bbcd-5d122dc4018b.jpg",
+      imbd:"6.5"},
+      {name:"Spider-Man: No Way Home",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Spider-705x750-558e6310-5b32-11ec-88db-fb6cee031940.jpg",
+      imbd:"7.5"},
+      {name:"Anek",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Anek-705x750-cec02f00-d8e3-11ec-a247-cb3046901f82.jpg",
+      imbd:"6.5"},
+      {name:"The mastery of Dragon Seal",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/The-Mystery-Of-The-Dragon-Seal-705x750-a71b24a0-d767-11ec-b2b4-b70973efa5a2.jpg",
+      imbd:"6.5"},
+      {name:"Doctor Strange",date:"22 May 22",
+      img:"https://assetscdn1.paytm.com/images/cinema/Doctor-Strange--705x750-0fa96990-cbb6-11ec-a71e-b7825cbc9ee5.jpg",
+      imbd:"6.5"}
+    ]
+     var imgData = localStorage.setItem("Movies",JSON.stringify(arr));
+
+     var data = JSON.parse(localStorage.getItem("Movies"));
+
+    data.forEach(function (el){
+        
+
+        var box = document.createElement("div")
+
+        var img = document.createElement("img")
+        img.src = el.img;
+
+        var name = document.createElement("p")
+        name.innerText = el.name;
+
+        var date = document.createElement("p")
+        date.innerText = `Release Date: ${el.date}`;
+           
+        var imbd = document.createElement("p")
+        imbd.innerText = `IMBD Rating : ${el.imbd} `;
+
+        box.append(img,name,date,imbd)
+        document.getElementById("container").append(box)
+
+    });
+
+
+
+
+   
+</script>
